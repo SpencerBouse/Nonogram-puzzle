@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --grid-col-count: 10;
+  --rule-group-width: 10%;
+  --rule-group-height: 10%;
+}
+
+
+#info{
+}
+#title{
+  border-radius: 0 0 .5em .5em;
+}
+.setting{
+  border-radius: .5em .5em 0 0;
+}
+
+
+#puzzleContainer{
+  min-width: 40rem;
+  min-height: 40rem;
+}
+#puzzle{
+  grid-template-columns: repeat(var(--grid-col-count), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--grid-col-count), minmax(0, 1fr));
+}
+.topHints{
+  width: var(--rule-group-width);
+  border-radius: .5em .5em 0 0;
+}
+.sideHints{
+  height: var(--rule-group-height);
+  border-radius: .5em 0 0 .5em;
+}
+.cell{
+  position: relative;
+}
+.cell:hover::before{
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px; 
+  bottom: -2px; 
+  left: -2px; 
+}
+.text-width-5{
+  font-size: 7rem;
+  line-height: 50%;
+}
+.text-width-10{
+  font-size: 3.5rem;
+  line-height: 47%;
+}
+.text-width-15{
+  font-size: 2rem;
+  line-height: 58%;
+}
+#winContainer{
+  top: 46%;
+}
+
+.filled{
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
+}
+.marked{
+}
+.highlighted {
+  --tw-bg-opacity: .55;
+  box-shadow: inset 0 0 0 1000px rgb(191 219 254 / var(--tw-bg-opacity))
+}
+.incorrect {
+  --tw-text-opacity: 1 !important;
+  color: rgb(239 68 68 / var(--tw-text-opacity)) !important;
+}
